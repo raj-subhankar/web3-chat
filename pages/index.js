@@ -1,8 +1,13 @@
 import Head from "next/head";
+import Login from "../components/Login";
 
 export default function Home() {
+  const isAuthenticated = false;
+
+  if (!isAuthenticated) return <Login />;
+
   return (
-    <div className="">
+    <div className="h-screen">
       <Head>
         <title>Web3 Chat</title>
         <link rel="icon" href="/favicon.ico" />
