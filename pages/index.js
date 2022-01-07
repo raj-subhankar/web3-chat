@@ -2,9 +2,10 @@ import Head from "next/head";
 import { useMoralis } from "react-moralis";
 import Header from "../components/Header";
 import Login from "../components/Login";
+import Messages from "../components/Messages";
 
 export default function Home() {
-  const { isAuthenticated, logout } = useMoralis();
+  const { isAuthenticated } = useMoralis();
 
   if (!isAuthenticated) return <Login />;
 
@@ -14,10 +15,11 @@ export default function Home() {
         <title>Web3 Chat</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <div className="max-w-screen-2xl mx-auto">
         <Header />
+        <Messages />
       </div>
-      <button onClick={logout}>Logout</button>
     </div>
   );
 }
